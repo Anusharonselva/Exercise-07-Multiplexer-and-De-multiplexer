@@ -54,30 +54,47 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
+
 Developed by: S.ANUSHARON
+
 RegisterNumber:  212222240010
 
 MULTIPLEXER
 
 module nmux(a,s,y);
+
 input[3:0]a;
+
 input[1:0]s;
+
 output reg y;
+
 always @ (a,s)
+
 begin
+
 case(s)
+
    2'b00:y=a[0];
+   
    2'b01:y=a[1];
+   
    2'b10:y=a[2];
+   
    2'b11:y=a[3];
+   
 endcase
+
 end
+
 endmodule
 
 DEMULTIPLEXER
 
 module dmux(input in, input [1:0] sel, output reg [3:0] out);
+
   always @(in or sel) begin
+  
     case(sel)
       2'b00: out = 4'b0001;
       2'b01: out = 4'b0010;
@@ -86,6 +103,7 @@ module dmux(input in, input [1:0] sel, output reg [3:0] out);
       default: out = 4'b0000; // Default case
     endcase
   end
+  
 endmodule
 
 */
