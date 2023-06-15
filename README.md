@@ -47,15 +47,47 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+/* write all the steps invloved*/
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: S.ANUSHARON
+RegisterNumber:  212222240010
+
+MULTIPLEXER
+
+module nmux(a,s,y);
+input[3:0]a;
+input[1:0]s;
+output reg y;
+always @ (a,s)
+begin
+case(s)
+   2'b00:y=a[0];
+   2'b01:y=a[1];
+   2'b10:y=a[2];
+   2'b11:y=a[3];
+endcase
+end
+endmodule
+
+DEMULTIPLEXER
+
+module dmux(input in, input [1:0] sel, output reg [3:0] out);
+  always @(in or sel) begin
+    case(sel)
+      2'b00: out = 4'b0001;
+      2'b01: out = 4'b0010;
+      2'b10: out = 4'b0100;
+      2'b11: out = 4'b1000;
+      default: out = 4'b0000; // Default case
+    endcase
+  end
+endmodule
+
 */
 
 
@@ -63,10 +95,15 @@ RegisterNumber:
 
 
 
-### RTL LOGIC  
+### RTL LOGIC 
 
+MULTIPLEXER
 
+![Screenshot (316)](https://github.com/Anusharonselva/Exercise-07-Multiplexer-and-De-multiplexer/assets/119405600/1b260a44-54b2-4164-9ba5-59e4b11e88ec)
 
+DEMULTIPLEXER
+
+![Screenshot (317)](https://github.com/Anusharonselva/Exercise-07-Multiplexer-and-De-multiplexer/assets/119405600/068132ac-4a43-4ab5-8dbc-a8dc1c95b53e)
 
 
 
@@ -74,15 +111,22 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+MULTIPLEXER
 
+![Screenshot (318)](https://github.com/Anusharonselva/Exercise-07-Multiplexer-and-De-multiplexer/assets/119405600/e22d724f-dc2f-4a38-9982-e60d980951a3)
 
+DEMULTIPLEXER
 
+![Screenshot (319)](https://github.com/Anusharonselva/Exercise-07-Multiplexer-and-De-multiplexer/assets/119405600/97dd21ab-763c-41ae-bc68-5f01343280a3)
 
 ### TRUTH TABLE 
 
+![Screenshot (320)](https://github.com/Anusharonselva/Exercise-07-Multiplexer-and-De-multiplexer/assets/119405600/2269f698-943c-41b6-a71f-203693d0442c)
 
+![Screenshot (224) 1](https://github.com/Anusharonselva/Exercise-07-Multiplexer-and-De-multiplexer/assets/119405600/6ec42bbb-1181-4e33-b88d-583530d500b2)
 
 
 
 
 ### RESULTS 
+Therefore multiplexer and demultiplexer is executed successfully.
